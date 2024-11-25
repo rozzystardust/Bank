@@ -1,0 +1,45 @@
+import java.util.*;
+
+public class BankAccount
+{ 
+   //Variables to store account balance and ID
+   double balance;
+   String accountID; 
+   String accountHolder;
+
+   public void promptAccountDetails()
+   {
+     //Purpose:  To prompt for and initialise bank account details
+      Scanner sc=new Scanner(System.in);
+      System.out.println("********  Initialising Bank Account  Details *******");
+      System.out.print("Please enter Name => ");
+      accountHolder = sc.next();
+      System.out.print("Please enter ID => ");
+      accountID = sc.next();
+      System.out.print("Please enter an initial balance => ");
+      balance =sc.nextDouble();
+      System.out.println("Account Initialised ");
+   }
+
+  public void displayDetails()
+  {
+    //Purpose:  To display current account details
+     System.out.println("******** Account Details *******");
+     System.out.println("Name = " + accountHolder);
+     System.out.println("ID = " + accountID);
+     System.out.println("Current balance = " + balance);
+   }
+
+   public String getHolder()
+   { 
+     //Purpose:  Return the name of the account holder
+     return accountHolder;
+   }
+
+   public static void main(String[] args)
+   {
+      BankAccount account = new BankAccount();
+      account.promptAccountDetails();
+      account.displayDetails();
+   }
+}
